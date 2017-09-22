@@ -19,7 +19,7 @@ import './style.css'
 Vue.config.productionTip = false
 
 var title = $('title').text()
-var isMob = Utils.detectMob();
+var isMob = Utils.detectMob(10);
 var platform = (isMob == true) ? 'Mob' : 'PC'
 
 /* eslint-disable no-new */
@@ -127,6 +127,30 @@ $(document).ready(function(){
 		});
 		if(video.paused == true){
 			video.play()
+			$('#video-control').removeClass('fa-play')
+			$('#video-control').addClass('fa-repeat')
+			counter = setInterval(function(){
+				// console.log('video2')
+				if(w <= 1024){
+					ctx.clearRect(0, 0, 375, 667)
+					ctx.drawImage(video, 0, 0, 374, 666, 0, 0, 375, 667)
+				}
+				else{
+					ctx.clearRect(0, 0, 1280, 720)
+					ctx.drawImage(video, 0, 0, 1280, 720, 0, 0, 1280, 720)
+				}
+				var progress = video.currentTime / video.duration
+				// console.log(progress)
+				video_state.clearRect(0, 0, 40, 40)
+				video_state.beginPath();
+				video_state.arc(20, 20,17.5, 0, 2 * Math.PI);
+				video_state.strokeStyle = '#FFFFFF';
+				video_state.stroke();
+				video_state.beginPath();
+				video_state.arc(20,20,17.5,-0.5 * Math.PI, (2 * progress - 0.5) * Math.PI);
+				video_state.strokeStyle = "#FF4612";
+				video_state.stroke();
+			}, 33)
 		}
 		else{
 			video.currentTime = 0;
@@ -239,7 +263,7 @@ $(document).ready(function(){
 		$('#cover').css('height', h+'px')
 
 		if(scroll_now >= movie1 - (h + 200) && scroll_now < movie1){
-			if(ver[0] >= 10 || w > 1024){
+			if(ver == true || w > 1024){
 				if($('#movie-1').get(0).paused){
 					$('#movie-1').get(0).play()
 				}
@@ -255,7 +279,7 @@ $(document).ready(function(){
 			$('#back-contain').css('background-color', '#000000')
 			$('#video-state-contain').css('opacity', 1)
 			if(counter == null){
-				if(ver[0] >= 10 || w > 1024){
+				if(ver == true || w > 1024){
 
 					video.play()
 					if(video.paused == false){
