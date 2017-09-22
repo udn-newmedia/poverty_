@@ -31,6 +31,12 @@ module.exports = merge(baseWebpackConfig, {
       chunks: ['vendor', 'manifest', 'app'],
       inject: true
     }),
+    new HtmlWebpackPlugin({
+      filename: 'light.html',
+      template: 'light.html',
+      chunks: ['vendor', 'manifest', 'light'],
+      inject: true
+    }),
     new FriendlyErrorsPlugin()
   ]
 })

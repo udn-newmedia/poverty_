@@ -16,7 +16,7 @@ export default {
     .quote-contain {
         font-family: "PMingLiU";
         font-weight: bold;
-        font-size: 26px;
+        font-size: 32px;
         min-height: 125px;
         color: #888888;
         padding: 15px 0;
@@ -28,8 +28,15 @@ export default {
         flex-direction: column;
         min-height: 125px;
         position: relative;
+        letter-spacing: -1px;
     }
-    @media screen and (max-width: 1024px){
+    @media screen and (max-width: 767px){
+        .quote-contain{
+            font-size: 26px;
+            align-items: flex-end;
+        }
+    }
+    @media screen and (min-width: 768px) and (max-width: 1024px){
         .quote-contain{
             align-items: flex-end;
         }

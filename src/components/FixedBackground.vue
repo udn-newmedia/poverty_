@@ -98,6 +98,9 @@ export default {
         width: 100%;
     }
     @media screen and (min-width: 1025px) and (max-width: 1280px){
+        .fix-text{
+            font-size: 40px;
+        }
         .canvas-bg{
             height: 100%;
             left: -12.5%;
@@ -105,6 +108,11 @@ export default {
         canvas{
             width: auto;
             height: 100%;
+        }
+    }
+    @media screen and (min-width:1281px){
+        .fix-text{
+            font-size: 40px;
         }
     }
 </style>

@@ -10,7 +10,7 @@ export default {
     props: ['href'],
     computed: {
         link: function(){
-            return window.location.href + this.href
+            return window.location.href
         }
     }
 }

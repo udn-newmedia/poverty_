@@ -45,7 +45,7 @@ export default {
             padding: 64px 100px;
         }
         h2{
-            font-size: 26px;
+            font-size: 30px;
         }
         p{
             font-size: 20px;
@@ -54,7 +54,7 @@ export default {
     }
     @media screen and (min-width: 1025px){
         .container{
-            width: 800px;
+            width: 880px;
         }
         .content{
             padding: 100px 0px;

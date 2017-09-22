@@ -1,10 +1,10 @@
 <template>
     <div class="logo-block">
         <div class="logo">
-            <img src="https://udn.com/upf/newmedia/image/udn-logo.svg">
+            <a href="https://udn.com/news/index" target="_blank"><img src="https://udn.com/upf/newmedia/image/udn-logo.svg"></a>
         </div>
         <div class="logo">
-            <img src="https://udn.com/upf/newmedia/image/nmd-logo.svg">
+            <a href="https://udn.com/upf/newmedia/udn_newmedia/" target="_blank"><img src="https://udn.com/upf/newmedia/image/nmd-logo.svg"></a>
         </div>
 
     </div>
