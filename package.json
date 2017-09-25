@@ -10,7 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "udn-newmedia-utils": "^1.0.2",
+    "udn-newmedia-utils": "^1.0.4",
     "vue": "^2.4.2",
     "vue-video-player": "^4.0.4"
   },

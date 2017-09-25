@@ -8,6 +8,79 @@
     transition: all 1s ease;
 }
 
+video::-webkit-media-controls-start-playback-button {
+	display: none !important;
+}
+
+video::-webkit-media-controls-fullscreen-button {
+    display: none;
+}
+
+.video-contain{
+    position: relative;
+}
+
+.video-control{
+    margin-top: -8px;
+}
+
+.video-play{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 60px;
+    color: #FF4612;
+    margin-left: -12.5px;
+    margin-top: -30px;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.video-wait{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 60px;
+    color: #FF4612;
+    margin-left: -23.5px;
+    margin-top: -30px;
+    transition: opacity 0.2s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.volume{
+    color: #FF4612;
+    z-index: 999;
+    position: absolute;
+    bottom: -24px;
+    left: 28px;
+}
+.volume-text{
+    position: absolute;
+    left: 47px;
+    bottom: -30px;
+    color: #FF4612;
+}
+.replay{
+    color: #FF4612;
+    z-index: 999;
+    position: absolute;
+    bottom: -26px;
+    right: 15px;
+}
+
+.progress{
+    height: 4px;
+    margin-bottom: 0;
+}
+.progress-bar{
+    height: 4px;
+    width: 0;
+    background-color: #FF4612;
+    transition: width 0.6s linear;
+}
+
 .orange{
     color: #FF4612;
 }
@@ -165,6 +238,11 @@ canvas{
 
 #back-bg{
     width: 100%;
+}
+
+.video-contain{
+    background-color: #ECEAEA;
+    transition: all 0.7s ease;
 }
 
 

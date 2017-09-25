@@ -19,8 +19,7 @@ export default {
     },
     methods: {
         handleScroll: function(event){
-            let currentH = window.pageYOffset
-            console.log(currentH + 'in indicator' + window.scrollHeight)
+            let currentH = window.pageYOffset            
             let totalH = document.body.scrollHeight - window.innerHeight
             this.progress = ((currentH / totalH) * 100).toFixed(2)
             if(currentH < window.innerHeight / 2){

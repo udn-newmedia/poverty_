@@ -40,6 +40,68 @@ new Vue({
 	components: { App }
 })
 
+var progress = [null, null, null, null];
+var movie_progress = 0;
+var read_progress = 0;
+
+function moviePlay(id){
+	$('#movie-' + id).get(0).play();
+	if(progress[id - 1] == null){
+		progress[id - 1] = setInterval(function(){
+			var curTime = $('#movie-' + id).get(0).currentTime;
+			var temp = curTime / $('#movie-' + id).get(0).duration * 100;
+			if(temp > 0.6){
+				$('.video-play[data-target="' + id + '"]').css('opacity', 0);
+			}
+			if(Math.floor(curTime/5) > movie_progress){
+				movie_progress = Math.floor(curTime/5)
+				ga("send", {
+					"hitType": "event",
+					"eventCategory": "movie play",
+					"eventAction": "play",
+					"eventLabel": "[" + platform + "] [" + title + "] [movie " + id + " play " + (movie_progress*5) + "]"
+				});
+			}
+			
+			$('#progress-bar-' + id).css('width', temp + '%')
+		}, 600)
+	}
+}
+	
+function moviePause(id){
+	$('#movie-' + id).get(0).pause();
+	$('.video-play[data-target="' + id + '"]').css('opacity', 1);
+	if(progress[id-1]){
+		clearInterval(progress[id-1])
+		progress[id-1] = null;
+	}
+}
+
+function movieReplay(id){
+	$('#movie-' + id).get(0).currentTime = 0;
+	$('#movie-' + id).get(0).play();
+	$('.progress-bar').css('width', 0);
+	clearInterval(progress[id - 1])
+	progress[id - 1] = setInterval(function(){
+		var temp = $('#movie-' + id).get(0).currentTime / $('#movie-' + id).get(0).duration * 100
+		$('#progress-bar-' + id).css('width', temp + '%')
+	}, 600)
+}
+
+function movieVolume(id){
+	
+	if($('#movie-' + id).get(0).muted == true){
+		$('#movie-' + id).get(0).muted = false;
+		$('.volume[data-target="' + id + '"]').removeClass('fa-volume-off').addClass('fa-volume-up')
+		$('.volume-text[data-target="' + id + '"]').text('點按關聲音');
+	}
+	else{
+		$('#movie-' + id).get(0).muted = true;
+		$('.volume[data-target="' + id + '"]').removeClass('fa-volume-up').addClass('fa-volume-off')
+		$('.volume-text[data-target="' + id + '"]').text('點按開聲音');
+	}
+}
+
 $(document).ready(function(){
 	var w = $(window).width()
 	var h = $(window).height()
@@ -50,12 +112,13 @@ $(document).ready(function(){
 	var cross1, cross2
 	var chart, chart_flag = false
 	var pic3, pic4
-	var movie1
+	var movie, movie1
 	var counter
 	var video = document.getElementById("video");
 	var canvas, canvas2, canvas3
 	var ctx, volume, video_state
-	var ver = Utils.iOSVersion();
+	var ver = Utils.iOSVersion(10)
+	
 
 	console.log(ver)
 
@@ -69,6 +132,92 @@ $(document).ready(function(){
 	volume.arc(20, 20,17.5, 0, 2 * Math.PI);
 	volume.strokeStyle = '#FFFFFF';
 	volume.stroke();
+
+	$('video').on('waiting', function(){
+		var tar = $(this).data('target')
+		$('.video-play[data-target="' + tar + '"]').css('opacity', 0);
+		$('.fa-spinner[data-target="' + tar + '"]').css('opacity', 1)
+		console.log('wait' + $(this).data('target'))
+	})
+
+	$('video').on('canplay', function(){
+		var tar = $(this).data('target')
+		$('.fa-spinner[data-target="' + tar + '"]').css('opacity', 0)
+		$('.video-play[data-target="' + tar + '"]').css('opacity', 1);
+		console.log('canplay' + $(this).data('target'))
+	})
+
+	$('video').on('ended', function(){
+		var tar = $(this).data('target')
+		if(progress[tar - 1]){
+			clearInterval(progress[tar - 1]);
+			progress[tar - 1] = null;
+			$('#progress-bar-' + tar).css('width', 0)
+		}
+		$(this).get(0).currentTime = 0
+		$('.video-play[data-target="' + tar + '"]').css('opacity', 1);
+		ga("send", {
+			"hitType": "event",
+			"eventCategory": "movie end",
+			"eventAction": "click",
+			"eventLabel": "[" + platform + "] [" + title + "] [movie " + tar + " end]"
+		});
+	})
+
+	$('video').click(function(){
+		var tar = $(this).data('target')
+		if($(this).get(0).paused == true){
+			moviePlay(tar);
+			if($(this).get(0).muted == true){
+				$(this).get(0).muted = false;
+				$('.volume[data-target="' + tar + '"]').removeClass('fa-volume-off').addClass('fa-volume-up')
+				$('.volume-text[data-target="' + tar + '"]').text('點按關聲音');
+			}
+		}
+		else{
+			$(this).get(0).pause();
+			moviePause(tar);
+		}
+		ga("send", {
+			"hitType": "event",
+			"eventCategory": "movie click",
+			"eventAction": "click",
+			"eventLabel": "[" + platform + "] [" + title + "] [movie " + tar + " click]"
+		});
+	});
+
+	$('.replay').click(function(){
+		var tar = $(this).data('target')
+		movieReplay(tar)
+		ga("send", {
+			"hitType": "event",
+			"eventCategory": "movie replay",
+			"eventAction": "click",
+			"eventLabel": "[" + platform + "] [" + title + "] [movie " + tar + " replay]"
+		});
+	})
+
+	$('.volume').click(function(){
+		var tar = $(this).data('target');
+		movieVolume(tar);
+		ga("send", {
+			"hitType": "event",
+			"eventCategory": "movie volume",
+			"eventAction": "click",
+			"eventLabel": "[" + platform + "] [" + title + "] [movie " + tar + " volume]"
+		});
+	});
+
+	$('.volume-text').click(function(){
+		var tar = $(this).data('target');
+		movieVolume(tar);
+		ga("send", {
+			"hitType": "event",
+			"eventCategory": "movie volume text",
+			"eventAction": "click",
+			"eventLabel": "[" + platform + "] [" + title + "] [movie " + tar + " volume text]"
+		});
+	});
 
 	$('a').click(function(){
         console.log('click')
@@ -95,69 +244,6 @@ $(document).ready(function(){
 			window.open("https://lineit.line.me/share/ui?url="+window.location.href);
 		}
 	});
-
-	$('#video').on('ended', function(){
-		clearInterval(counter)
-		counter = null
-		$('#video-control').removeClass('fa-play')
-		$('#video-control').addClass('fa-repeat')
-	})
-
-	$('#video-volume').click(function(){
-		ga("send", {
-			"hitType": "event",
-			"eventCategory": "video volume",
-			"eventAction": "click",
-			"eventLabel": "[" + platform + "] [" + title + "] [video volume]"
-		});
-		if($('#volume-img').attr('src') == './static/on.svg'){
-			$('#volume-img').attr('src', './static/off.svg')
-			video.muted = true
-		}
-		else{
-			$('#volume-img').attr('src', './static/on.svg')
-			video.muted = false
-		}
-	})
-
-	$('#video-control').click(function(){
-		ga("send", {
-			"hitType": "event",
-			"eventCategory": "video replay",
-			"eventAction": "click",
-			"eventLabel": "[" + platform + "] [" + title + "] [video control]"
-		});
-		if(video.paused == true){
-			video.play()
-			$('#video-control').removeClass('fa-play')
-			$('#video-control').addClass('fa-repeat')
-			counter = setInterval(function(){
-				// console.log('video2')
-				if(w <= 1024){
-					ctx.clearRect(0, 0, 375, 667)
-					ctx.drawImage(video, 0, 0, 374, 666, 0, 0, 375, 667)
-				}
-				else{
-					ctx.clearRect(0, 0, 1280, 720)
-					ctx.drawImage(video, 0, 0, 1280, 720, 0, 0, 1280, 720)
-				}
-				var progress = video.currentTime / video.duration
-				// console.log(progress)
-				video_state.clearRect(0, 0, 40, 40)
-				video_state.beginPath();
-				video_state.arc(20, 20,17.5, 0, 2 * Math.PI);
-				video_state.strokeStyle = '#FFFFFF';
-				video_state.stroke();
-				video_state.beginPath();
-				video_state.arc(20,20,17.5,-0.5 * Math.PI, (2 * progress - 0.5) * Math.PI);
-				video_state.strokeStyle = "#FF4612";
-				video_state.stroke();
-			}, 33)
-		}
-		else{
-			video.currentTime = 0;
-		}
-	})
 
 	$('#nav-icon').click(function(){
 		ga("send", {
@@ -219,9 +305,10 @@ $(document).ready(function(){
 
 	if(w <= 1024){
 		$('#back-bg').attr('src', bg_mobile)
-		$('#video').attr('src', './static/mobile.mp4')
-		$('#video').attr('poster', './static/mobile.jpg')
-		$('#video').prop('muted', true)
+		$('#movie-2').attr('src', './static/mobile.mp4')
+		$('#movie-2').attr('poster', './static/mobile.jpg')
+		$('#movie-2').prop('muted', true)
+		
 		animation = bodymovin.loadAnimation({
 			container: document.getElementById('chart'),
 			renderer: 'svg',
@@ -235,8 +322,9 @@ $(document).ready(function(){
 		pic4.src= pic4_mobile
 	}
 	else{
-		$('#video').attr('src', './static/web.mp4')
-		$('#video').attr('poster', './static/web.jpg')
+		$('#movie-2').attr('src', './static/web.mp4')
+		$('#movie-2').attr('poster', './static/web.jpg')
+		$('#movie-2').prop('controls', true)
 		$('#back-bg').attr('src', bg)
 		animation = bodymovin.loadAnimation({
 			container: document.getElementById('chart'),
@@ -255,70 +343,47 @@ $(document).ready(function(){
 
 	$(window).on('scroll', function(){
 		scroll_now = $(window).scrollTop();
-		console.log(scroll_now + 'in main')
+		
 		fixbg1 = $('#fixbg-1').offset().top
 		fixbg2 = $('#fixbg-2').offset().top
 		fixbg3 = $('#fixbg-3').offset().top
 		chart = $('#chart-contain').offset().top
 		cross1 = $('#cross-1').offset().top
 		cross2 = $('#cross-2').offset().top
+		movie = $('#movie-2').offset().top;
 		movie1 = $('#movie-1').offset().top;
 		$('#cover').css('height', h+'px')
+		if(scroll_now >= movie - h/2 && scroll_now < movie + h/2){
+			$('.video-contain').css('filter', 'brightness(1)')
+			if(navigator.userAgent.match(/iPhone/i)){
+				if(ver == true){
+					moviePlay(2)
+				}
+			}
+			else{
+				moviePlay(2)
+			}
+		}
+		else{
+			$('.video-contain').css('filter', 'brightness(0.5)')
+			moviePause(2)
+		}
 
 		if(scroll_now >= movie1 - (h + 200) && scroll_now < movie1){
-			if(ver == true || w > 1024){
-				if($('#movie-1').get(0).paused){
+			if(navigator.userAgent.match(/iPhone/i)){
+				if(ver == true){
 					$('#movie-1').get(0).play()
 				}
+			}
+			else{
+				$('#movie-1').get(0).play()
 			}
 		}
 		else{
 			$('#movie-1').get(0).pause()
 		}
 
-		if(scroll_now >= h * 3/4 && scroll_now < h * 2.25){
-			$('#back-contain').css('opacity', 1)
-			$('#back-contain').css('visibility', 'visible')
-			$('#back-contain').css('background-color', '#000000')
-			$('#video-state-contain').css('opacity', 1)
-			if(counter == null){
-				if(ver == true || w > 1024){
-
-					video.play()
-					if(video.paused == false){
-						$('#video-control').removeClass('fa-play')
-						$('#video-control').addClass('fa-repeat')
-					}
-					counter = setInterval(function(){
-						// console.log('video2')
-						if(w <= 1024){
-							ctx.clearRect(0, 0, 375, 667)
-							ctx.drawImage(video, 0, 0, 374, 666, 0, 0, 375, 667)
-						}
-						else{
-							ctx.clearRect(0, 0, 1280, 720)
-							ctx.drawImage(video, 0, 0, 1280, 720, 0, 0, 1280, 720)
-						}
-						var progress = video.currentTime / video.duration
-						// console.log(progress)
-						video_state.clearRect(0, 0, 40, 40)
-						video_state.beginPath();
-						video_state.arc(20, 20,17.5, 0, 2 * Math.PI);
-						video_state.strokeStyle = '#FFFFFF';
-						video_state.stroke();
-						video_state.beginPath();
-						video_state.arc(20,20,17.5,-0.5 * Math.PI, (2 * progress - 0.5) * Math.PI);
-						video_state.strokeStyle = "#FF4612";
-						video_state.stroke();
-					}, 33)
-				}
-				else{
-					ctx.drawImage(video, 0, 0, 1280, 720, 0, 0, 1280, 720)
-				}
-			}
-			console.log(5)
-		}
-		else if(scroll_now >= cross1 - (h + 200) && scroll_now < cross2 - h){
+		if(scroll_now >= cross1 - (h + 200) && scroll_now < cross2 - h){
 			
 			$('#back-contain').css('opacity', 1)
 			$('#back-contain').css('visibility', 'visible')
@@ -349,10 +414,6 @@ $(document).ready(function(){
 			}
 		}
 		else{
-			video.pause()
-			clearInterval(counter)
-			counter = null
-			$('#video-state-contain').css('opacity', 0)
 			$('#back-text').css('opacity', 0)
 			$('#back-contain').css('opacity', 0)
 			$('#back-contain').css('visibility', 'hidden')

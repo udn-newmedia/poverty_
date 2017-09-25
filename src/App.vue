@@ -8,7 +8,20 @@
 			<div class="hbutton" data-target="4">把光帶回黑暗家鄉</div>
 		</HeadBar>
 		<Cover title="<b>被遺忘的孩子</b><br />我8歲，我住貨櫃屋" font-size="38" title-bottom="65" title-left="30" title-width="320" title-height="95" title-width-web="500" title-height-web="124" title-left-web="116" title-bottom-web="112"/>
-		<div class="blank" style="height:150vh;"></div>
+		<div style="height:30vh;"></div>
+		<div class="video-contain">
+			<video id="movie-2" playsinline data-target="2"></video>
+			<div class="video-control">
+				<div class="progress hidden-md hidden-lg">
+					<div id="progress-bar-2" class="progress-bar progress-bar-striped"></div>
+				</div>
+				<div class="img-say-out volume-text hidden-md hidden-lg" data-target="2">點按開聲音</div>
+				<i class="fa fa-spinner fa-pulse video-wait" data-target="2"></i>
+				<i class="fa fa-play video-play hidden-md hidden-lg" data-target="2"></i>
+				<i class="fa fa-volume-off volume hidden-md hidden-lg" data-target="2"></i>
+				<i class="fa fa-repeat replay hidden-md hidden-lg" data-target="2"></i>
+			</div>
+		</div>
 		<ContentContainer background-color="#ECEAEA">
 			<p>從車站到學校，沿途都是荒煙蔓草，雜草比人高，幾乎把車道掩埋。在這裡，有個小女孩住在貨櫃屋裡。</p>
 			<p><br/></p>
