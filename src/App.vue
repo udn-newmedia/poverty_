@@ -261,4 +261,7 @@ export default {
 	video{
 		width: 100%;
 	}
+	#app{
+		overflow: hidden;
+	}
 </style>

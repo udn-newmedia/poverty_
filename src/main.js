@@ -57,6 +57,8 @@ $(document).ready(function(){
 	var ctx, volume, video_state
 	var ver = Utils.iOSVersion();
 
+	console.log(ver)
+
 	canvas2 = document.getElementById('video-state');
 	video_state = canvas2.getContext('2d');
 	video_state.lineWidth = 3
@@ -253,6 +255,7 @@ $(document).ready(function(){
 
 	$(window).on('scroll', function(){
 		scroll_now = $(window).scrollTop();
+		console.log(scroll_now + 'in main')
 		fixbg1 = $('#fixbg-1').offset().top
 		fixbg2 = $('#fixbg-2').offset().top
 		fixbg3 = $('#fixbg-3').offset().top

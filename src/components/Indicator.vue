@@ -19,10 +19,11 @@ export default {
     },
     methods: {
         handleScroll: function(event){
-            let currentH = event.srcElement.body.scrollTop
-            let totalH = event.srcElement.body.clientHeight - window.innerHeight
+            let currentH = window.pageYOffset
+            console.log(currentH + 'in indicator' + window.scrollHeight)
+            let totalH = document.body.scrollHeight - window.innerHeight
             this.progress = ((currentH / totalH) * 100).toFixed(2)
-            if(event.srcElement.body.scrollTop < window.innerHeight / 2){
+            if(currentH < window.innerHeight / 2){
                 this.opacity = 0
             }
             else{

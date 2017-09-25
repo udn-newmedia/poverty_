@@ -39,7 +39,8 @@ export default {
     },
     methods: {
         handleScroll: function(event){
-            if(event.srcElement.body.scrollTop < window.innerHeight / 2){
+            let currentH = window.pageYOffset
+            if(currentH < window.innerHeight / 2){
                 this.top = 0
             }
             else{

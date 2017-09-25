@@ -133,9 +133,11 @@
 				</div>
 			</div>
 			<p><br/></p>
-			<p>一起關心貧窮兒，感謝這些人的付出與資料提供 </p>
-			<p><br/></p>
 			<div class="link">
+				<div class="tree">
+					<img :src="tree"/>
+				</div>
+				<div class="link-title">一起關心貧窮兒，感謝這些人的付出與資料提供 </div>
 				<div class="link-text">
 					<a target="_blank" href="https://www.facebook.com/%E4%BA%BA%E4%B9%8B%E5%B9%BC%E5%8D%94%E6%9C%83-Our-Children-Our-Hope-1097602967038554/?fref=ts"><span class="link-line">中華人之幼協會</span></a>
 				</div>
@@ -147,6 +149,9 @@
 				</div>
 				<div class="link-text">
 					<a target="_blank" href="https://www.facebook.com/YongLinFoundation/?fref=ts"><span class="link-line">永齡慈善教育基金會FB粉絲專頁</span></a>
+				</div>
+				<div class="link-text">
+					<a target="_blank" href="https://www.facebook.com/foxconnscholarship/"><span class="link-line">鴻海獎學鯨</span></a>
 				</div>
 				<div class="link-text">
 					<a target="_blank" href="https://www.facebook.com/yaling.jade/?fref=ts"><span class="link-line">黃雅玲FB粉絲專頁</span></a>
@@ -240,6 +245,8 @@ import relate4 from './assets/relate4.jpg'
 import chart_web from './assets/light/chart.svg'
 import chart_mobile from './assets/light/mobile/chart3-3.png'
 
+import tree from './assets/light/tree.png'
+
 var t = new Image()
 var w = $(window).width()
 var h = $(window).height()
@@ -271,7 +278,8 @@ export default {
 			relate3: relate3,
 			relate4: relate4,
 			chart_web: chart_web,
-			chart_mobile: chart_mobile
+			chart_mobile: chart_mobile,
+			tree: tree
 		}
 	},
 	components: {
@@ -281,5 +289,7 @@ export default {
 </script>
 
 <style>
-	
+	#app{
+		overflow: hidden;
+	}
 </style>

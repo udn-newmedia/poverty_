@@ -43,7 +43,8 @@ export default {
             this.ctx.drawImage(this.image, 0, 0, this.image.width, this.image.height, 0, 0, this.canvas_width, this.canvas_height)
         },
         handleScroll: function(e){
-            if(e.srcElement.body.scrollTop > (this.$el.offsetTop - window.innerHeight - 200) && e.srcElement.body.scrollTop < (this.$el.offsetTop + window.innerHeight)){
+            let currentH = window.pageYOffset
+            if(currentH > (this.$el.offsetTop - window.innerHeight - 100) && currentH < (this.$el.offsetTop + window.innerHeight)){
                 this.opacity = 1
             }
             else{
