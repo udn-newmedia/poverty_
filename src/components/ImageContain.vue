@@ -68,8 +68,10 @@ export default {
     }
     @media screen and (min-width: 768px) and (max-width: 1024px){
         img{
-            position: absolute;
-            width: calc(100% - 200px);
+            width: 100%;
+        }
+        .image-contain{
+            margin: 0 auto;
         }
     }
     @media screen and (min-width: 1025px){

@@ -5,7 +5,7 @@
 			<div class="hbutton" data-target="1">住在貨櫃屋的女孩</div>
 			<div class="hbutton" data-target="2">等鄰居開門的男孩</div>
 			<div class="hbutton" data-target="3">邊緣弱勢人數倍增</div>
-			<div class="hbutton" data-target="4">把光帶回黑暗家鄉</div>
+			<div id="s-hbutton" class="hbutton" data-target="4">把光帶回黑暗家鄉</div>
 		</HeadBar>
 		<Cover title="<b>被遺忘的孩子</b><br />我8歲，我住貨櫃屋" font-size="38" title-bottom="65" title-left="30" title-width="320" title-height="95" title-width-web="500" title-height-web="124" title-left-web="116" title-bottom-web="112"/>
 		<div style="height:30vh;"></div>
@@ -100,6 +100,7 @@
 		<div id="chart-contain">
 			<p><br/></p>
 			<div id="chart"></div>
+			<div id="chart-say">資料來源：家扶基金會2015年弱勢兒少生活趨勢調查報告</div>
 		</div>
 		<ContentContainer background-color="#ECEAEA">
 			<p>2015年台灣的貧富差距又創史上第二高，最有錢的前5%家庭跟最窮的後5%家庭，收入相差100倍以上。根據衛福部資料，低收與中低收入老人占總人口數5.89%，未滿12歲的貧窮兒童卻占有18.34%，人數是貧窮老人的三倍，台灣沒有下流老人，貧窮困苦的年齡層集中在流沙中年，以及台灣的下一代、將近12萬個貧窮兒童。</p>

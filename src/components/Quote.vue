@@ -30,15 +30,4 @@ export default {
         position: relative;
         letter-spacing: -1px;
     }
-    @media screen and (max-width: 767px){
-        .quote-contain{
-            font-size: 26px;
-            align-items: flex-end;
-        }
-    }
-    @media screen and (min-width: 768px) and (max-width: 1024px){
-        .quote-contain{
-            align-items: flex-end;
-        }
-    }
 </style>

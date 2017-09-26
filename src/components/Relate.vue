@@ -55,7 +55,7 @@ export default {
         height: 146px;
     }
 
-    @media screen and (max-width: 1024px){
+    @media screen and (max-width: 767px){
          #report .col-sm-6{
             clear: both;
         }
@@ -79,6 +79,12 @@ export default {
             width: 50%;
             padding-left: 10px;
             padding-bottom: 10px;
+        }
+    }
+    @media screen and (min-width: 768px) and (max-width: 1024px){
+        #report .col-sm-6 img{
+            width: 100%;
+            height: auto;
         }
     }
 </style>

@@ -2,14 +2,14 @@
     <div id="head-bar" :style="{top: top+'px'}">
         <div id="hbutton-contain">
             <slot></slot>
-            <div id="logo-contain" class="hidden-md hidden-lg">
+            <div id="logo-contain" class="hidden-lg">
                 <Logo />
             </div>
         </div>
         <div id="icon">
             <a href="."><img src="https://udn.com/upf/newmedia/image/udn.png"></a>
         </div>
-        <div id="hbutton" class="squre hidden-md hidden-lg">
+        <div id="hbutton" class="squre hidden-lg">
             <div id="nav-icon">
                 <span></span>
                 <span></span>

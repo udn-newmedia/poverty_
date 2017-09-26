@@ -5,9 +5,11 @@
 			<div class="hbutton" data-target="1">夜市討生活的孩子</div>
 			<div class="hbutton" data-target="2">靠捐助長大的女孩</div>
 			<div class="hbutton" data-target="3">偏鄉兒也能當網紅</div>
-			<div class="hbutton" data-target="4">被遺忘的孩子</div>
+			<div id="s-hbutton" class="hbutton" data-target="4">被遺忘的孩子</div>
 		</HeadBar>
-		<Cover title="我們長大，<span class='hidden-md hidden-lg'><br /></span>把光亮帶回黑暗家鄉" title-bottom="55" title-left="35" title-width="310" title-height="77" title-width-web="812" title-height-web="55" title-left-web="200" title-bottom-web="53" font-size="35"/>
+		<Cover title="我們長大，<span class='hidden-md hidden-lg'><br /></span>把光亮帶回黑暗家鄉" title-bottom="55" title-left="35" title-width="310" title-height="77" title-width-web="812" title-height-web="55" title-left-web="200" title-bottom-web="53" font-size="35">
+			<div class="sub-title">解方篇</div>
+		</Cover>
 		<ContentContainer background-color="#ECEAEA">
 			<p>台灣每10個窮人中，就有2個是兒童，家扶基金會曾粗略統計，有4-6%左右的孩子會陷入貧窮世襲，童年時食不果腹、缺乏保護，長大了也悲慘落入上一代的貧窮困境。</p>
 			<p><br/></p>
@@ -37,7 +39,7 @@
 			<p><br/></p>
 			<ImageContain width="720" height="580" :src="pic2_mobile" width-web="880" height-web="580" :src-web="pic2_web" imgsay="偏鄉不是老人就是小孩，貧窮弱勢也很多。吃盡貧窮苦味的陳良進回到家鄉，讓老人家動起來，預防疾病也能陪孫子長長久久。圖／陳良進提供"/>
 			<p><br/></p>
-			<p>人之幼協會近來紮根弱勢社區，布建社區安全網。人之幼協會表示，隨著社會變遷及家庭結構的改變，隔代、單親、新住民及近貧等弱勢家庭有逐年增加的趨勢，這些弱勢家庭也正處於M型社會的最底層，因福利服務或社會支持的不足，造成了弱勢家庭在貧窮文化邊緣流轉。</p>
+			<p>人之幼協會近來扎根弱勢社區，布建社區安全網。人之幼協會表示，隨著社會變遷及家庭結構的改變，隔代、單親、新住民及近貧等弱勢家庭有逐年增加的趨勢，這些弱勢家庭也正處於M型社會的最底層，因福利服務或社會支持的不足，造成了弱勢家庭在貧窮文化邊緣流轉。</p>
 			<p><br/><p>
 			<p>人之幼協會認為，教育仍是促成社會階層流動的關鍵，因此以學童「學習落後點」做為課輔的起點，透過長期的教學與陪伴，奠定學習的基礎，進一步提升學習成就，重建對課業學習的信心與能力。</p>
 			<p><br/></p>
@@ -175,7 +177,7 @@
 			</Editor>
 			<p><br/></p>
 			<Relate>
-				<a href="./light.html" target="_blank" slot="relate-1">
+				<a href="./index.html" target="_blank" slot="relate-1">
 					<img :src="relate1" />
 					<p>被遺忘的孩子 我8歲，我住貨櫃屋</p>
 				</a>

@@ -122,17 +122,6 @@ $(document).ready(function(){
 
 	console.log(ver)
 
-	canvas2 = document.getElementById('video-state');
-	video_state = canvas2.getContext('2d');
-	video_state.lineWidth = 3
-	canvas3 = document.getElementById('volume');
-	volume = canvas3.getContext('2d');
-	volume.lineWidth = 3
-	volume.beginPath();
-	volume.arc(20, 20,17.5, 0, 2 * Math.PI);
-	volume.strokeStyle = '#FFFFFF';
-	volume.stroke();
-
 	$('video').on('waiting', function(){
 		var tar = $(this).data('target')
 		$('.video-play[data-target="' + tar + '"]').css('opacity', 0);
@@ -229,21 +218,6 @@ $(document).ready(function(){
 			"eventLabel": "[" + platform + "] [" + title + "] [" + $(this).attr('href') + "] [" + $(this).parent().attr('class') + "]"
 		});
 	})
-    
-    $('.line-share').click(function(e){
-		ga("send", {
-			"hitType": "event",
-			"eventCategory": "Line Share",
-			"eventAction": "click",
-			"eventLabel": "[" + platform + "] [" + title + "] [line share]"
-		});
-		if(detectmob()){
-			//手機
-			window.location.href="//line.me/R/msg/text/?20年來，台灣落入近貧的兒童增加一倍...%0D%0A%0D%0A8歲的小女孩住在貨櫃屋裡，家徒四壁；10歲的小男孩則住在破舊髒亂的環境裡，冬天沒熱水澡可洗。他們都是台灣的下一代，卻落在社會救助的安全網外，成為社會遺忘的孩子。%0D%0A%0D%0A台灣近幾年關注高齡化問題，擔心步入日本後塵產生大量「下流老人」，但根據衛福部統計，12歲以下的貧窮兒童人數已是下流老人的3倍，誰來幫孩子翻轉命運？%0D%0A%0D%0A" + window.location.href;
-		}else{
-			window.open("https://lineit.line.me/share/ui?url="+window.location.href);
-		}
-	});
 
 	$('#nav-icon').click(function(){
 		ga("send", {
@@ -258,7 +232,7 @@ $(document).ready(function(){
 
 	$('.hbutton').click(function(){
 		if($(this).data('target') == 1){
-			$(this).toggleClass('open')
+			$('#nav-icon').toggleClass('open')
 			$('#hbutton-contain').toggleClass('open')
 			$('html, body').animate({scrollTop : $('#fixbg-1').offset().top}, 1000, function(){});
 			ga("send", {
@@ -269,7 +243,7 @@ $(document).ready(function(){
 			});
 		}
 		if($(this).data('target') == 2){
-			$(this).toggleClass('open')
+			$('#nav-icon').toggleClass('open')
 			$('#hbutton-contain').toggleClass('open')
 			$('html, body').animate({scrollTop : $('#fixbg-2').offset().top}, 1000, function(){});
 			ga("send", {
@@ -280,7 +254,7 @@ $(document).ready(function(){
 			});
 		}
 		if($(this).data('target') == 3){
-			$(this).toggleClass('open')
+			$('#nav-icon').toggleClass('open')
 			$('#hbutton-contain').toggleClass('open')
 			$('html, body').animate({scrollTop : $('#fixbg-3').offset().top}, 1000, function(){});
 			ga("send", {
@@ -291,7 +265,7 @@ $(document).ready(function(){
 			});
 		}
 		if($(this).data('target') == 4){
-			$(this).toggleClass('open')
+			$('#nav-icon').toggleClass('open')
 			$('#hbutton-contain').toggleClass('open')
 			ga("send", {
 				"hitType": "event",

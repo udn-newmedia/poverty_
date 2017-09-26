@@ -28,6 +28,7 @@ video::-webkit-media-controls-fullscreen-button {
     position: absolute;
     top: 50%;
     left: 50%;
+    opacity: 0;
     font-size: 60px;
     color: #FF4612;
     margin-left: -12.5px;
@@ -214,8 +215,90 @@ canvas{
     border-bottom: 2px solid #FF4612;
 }
 
-@media screen and (min-width: 1025px){
+#chart-say{
+    font-size: 17px;
+    color: gray;
+    width: 880px;
+    margin: 5px auto 0 auto;
+}
 
+#back-bg{
+    width: 100%;
+}
+
+.video-contain{
+    background-color: #ECEAEA;
+    transition: all 0.7s ease;
+}
+
+#s-hbutton{
+    color: #BD2C03;
+}
+
+#s-hbutton:hover{
+    color: #FFFFFF;
+}
+
+.sub-title{
+    position: absolute;
+    bottom: 130px;
+    left: 205px;
+    color: #FFFFFF;
+    background: #FF4612;
+    font-size: 21px;
+    padding: 5px 10px;
+}
+
+@media screen and (max-width: 350px){
+    h1{
+        font-size: 34px;
+    }
+    #back-text{
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    #chart-say{
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    #back-bg{
+        height: 100%;
+        width: auto;
+    }
+    #chart-say{
+        width: 100%;
+        padding: 0 100px;
+    }
+    .squre-card{
+        display: inline-block;
+    }
+    #card-2{
+        display: block;
+    }
+    #board-3{
+        height: 220px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    #back-bg{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 1025px){
+    #hbutton{
+        display: none;
+    }
+    #logo-contain{
+        display: none;
+    }
     .link-title{
         font-size: 30px;
     }
@@ -235,16 +318,6 @@ canvas{
         height: 220px;
     }
 }
-
-#back-bg{
-    width: 100%;
-}
-
-.video-contain{
-    background-color: #ECEAEA;
-    transition: all 0.7s ease;
-}
-
 
 @media screen and (min-width: 1025px) and (max-width: 1280px){
     #back-bg{

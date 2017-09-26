@@ -22,7 +22,7 @@ export default {
     },
     computed: {
         canvas_width: function(){
-            if(this.w <= 1024){
+            if(this.w < 1024){
                 return 375
             }
             else{
@@ -30,7 +30,7 @@ export default {
             }
         },
         canvas_height: function(){
-            if(this.w <= 1024){
+            if(this.w < 1024){
                 return 667
             }
             else{
@@ -55,7 +55,7 @@ export default {
     mounted: function(){
         
         this.ctx = this.$el.children[0].children[0].getContext('2d')
-        if(this.w <= 1024){
+        if(this.w < 1024){
             console.log(5)
             this.image.src = this.src
             this.$el.children[0].children[0].width = this.canvas_width
@@ -98,7 +98,7 @@ export default {
     canvas{
         width: 100%;
     }
-    @media screen and (min-width: 1025px) and (max-width: 1280px){
+    @media screen and (min-width: 1024px) and (max-width: 1280px){
         .fix-text{
             font-size: 40px;
         }
