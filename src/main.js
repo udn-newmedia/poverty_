@@ -50,7 +50,7 @@ function moviePlay(id){
 		progress[id - 1] = setInterval(function(){
 			var curTime = $('#movie-' + id).get(0).currentTime;
 			var temp = curTime / $('#movie-' + id).get(0).duration * 100;
-			if(temp > 0.6){
+			if(temp >= 0.6){
 				$('.video-play[data-target="' + id + '"]').css('opacity', 0);
 			}
 			if(Math.floor(curTime/5) > movie_progress){
@@ -79,13 +79,10 @@ function moviePause(id){
 
 function movieReplay(id){
 	$('#movie-' + id).get(0).currentTime = 0;
-	$('#movie-' + id).get(0).play();
 	$('.progress-bar').css('width', 0);
 	clearInterval(progress[id - 1])
-	progress[id - 1] = setInterval(function(){
-		var temp = $('#movie-' + id).get(0).currentTime / $('#movie-' + id).get(0).duration * 100
-		$('#progress-bar-' + id).css('width', temp + '%')
-	}, 600)
+	progress[id - 1] = null
+	moviePlay(id)
 }
 
 function movieVolume(id){
@@ -119,12 +116,12 @@ $(document).ready(function(){
 	var ctx, volume, video_state
 	var ver = Utils.iOSVersion(10)
 
-	$(window).on('resize', function(){
+
+	$(window).resize(function(){
 		if(w >= 768 && w <= 1024){
-			window.location.href = './index.html'
+			if($(window).width()!=w)	window.location.href="./index.html";
 		}
-	})
-	
+	});
 
 	console.log(Utils.isFacebookApp())
 
@@ -289,7 +286,7 @@ $(document).ready(function(){
 		$('#movie-2').attr('poster', './static/mobile.jpg?v=1')
 		$('#movie-2').prop('muted', true)
 		if(Utils.isFacebookApp()){
-			$('#title-contain').css('margin-bottom', '50px')
+			$('#title-contain').css('margin-bottom', '128px')
 		}
 		
 		animation = bodymovin.loadAnimation({
