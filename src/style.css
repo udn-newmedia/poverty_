@@ -263,6 +263,15 @@ canvas{
         width: 100%;
         padding: 0 20px;
     }
+    .sub-title {
+        position: absolute;
+        bottom: 146px;
+        left: 38px;
+        color: #FFFFFF;
+        background: #FF4612;
+        font-size: 19px;
+        padding: 4px 9px;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px){

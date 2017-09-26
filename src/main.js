@@ -120,7 +120,7 @@ $(document).ready(function(){
 	var ver = Utils.iOSVersion(10)
 	
 
-	console.log(ver)
+	console.log(Utils.isFacebookApp())
 
 	$('video').on('waiting', function(){
 		var tar = $(this).data('target')
@@ -279,9 +279,12 @@ $(document).ready(function(){
 
 	if(w <= 1024){
 		$('#back-bg').attr('src', bg_mobile)
-		$('#movie-2').attr('src', './static/mobile.mp4')
-		$('#movie-2').attr('poster', './static/mobile.jpg')
+		$('#movie-2').attr('src', './static/mobile.mp4?v=1')
+		$('#movie-2').attr('poster', './static/mobile.jpg?v=1')
 		$('#movie-2').prop('muted', true)
+		if(Utils.isFacebookApp()){
+			$('#title-contain').css('margin-bottom', '50px')
+		}
 		
 		animation = bodymovin.loadAnimation({
 			container: document.getElementById('chart'),
@@ -296,8 +299,8 @@ $(document).ready(function(){
 		pic4.src= pic4_mobile
 	}
 	else{
-		$('#movie-2').attr('src', './static/web.mp4')
-		$('#movie-2').attr('poster', './static/web.jpg')
+		$('#movie-2').attr('src', './static/web.mp4?v=1')
+		$('#movie-2').attr('poster', './static/web.jpg?v=1')
 		$('#movie-2').prop('controls', true)
 		$('#back-bg').attr('src', bg)
 		animation = bodymovin.loadAnimation({

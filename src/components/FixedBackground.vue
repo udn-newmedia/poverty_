@@ -56,13 +56,11 @@ export default {
         
         this.ctx = this.$el.children[0].children[0].getContext('2d')
         if(this.w < 1024){
-            console.log(5)
             this.image.src = this.src
             this.$el.children[0].children[0].width = this.canvas_width
             this.$el.children[0].children[0].height = this.canvas_height
         }
         else{
-            console.log(6)
             this.image.src = this.srcWeb
             this.$el.children[0].children[0].width = this.canvas_width
             this.$el.children[0].children[0].height = this.canvas_height

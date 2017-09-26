@@ -10,7 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "udn-newmedia-utils": "^1.0.6",
+    "udn-newmedia-utils": "^1.0.8",
     "vue": "^2.4.2"
   },
   "devDependencies": {
