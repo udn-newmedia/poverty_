@@ -274,6 +274,12 @@ canvas{
     }
 }
 
+@media screen and (min-width: 1000px) and (max-width: 1024px){
+    #back-contain{
+        padding-top: 10%;
+    }
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px){
     #back-bg{
         height: 100%;

@@ -5,7 +5,7 @@
 			<div class="hbutton" data-target="1">住在貨櫃屋的女孩</div>
 			<div class="hbutton" data-target="2">等鄰居開門的男孩</div>
 			<div class="hbutton" data-target="3">邊緣弱勢人數倍增</div>
-			<div id="s-hbutton" class="hbutton" data-target="4">把光帶回黑暗家鄉</div>
+			<div id="s-hbutton" class="hbutton" data-target="4">解方篇</div>
 		</HeadBar>
 		<Cover title="<b>被遺忘的孩子</b><br />我8歲，我住貨櫃屋" font-size="38" title-bottom="65" title-left="30" title-width="320" title-height="95" title-width-web="500" title-height-web="124" title-left-web="116" title-bottom-web="112"/>
 		<div style="height:30vh;"></div>

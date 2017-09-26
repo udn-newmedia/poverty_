@@ -23,10 +23,10 @@ var isMob = Utils.detectMob(10);
 var platform = (isMob == true) ? 'Mob' : 'PC'
 
 /* eslint-disable no-new */
-new Vue({
+var app = new Vue({
 	el: '#app',
 	mounted: function(){
-		if(window.innerWidth <= 1024){
+		if(window.innerWidth < 1024){
 			$('#back').prop('width', 375)
 			$('#back').prop('height', 667)
 		}
@@ -118,6 +118,12 @@ $(document).ready(function(){
 	var canvas, canvas2, canvas3
 	var ctx, volume, video_state
 	var ver = Utils.iOSVersion(10)
+
+	$(window).on('resize', function(){
+		if(w >= 768 && w <= 1024){
+			window.location.href = './index.html'
+		}
+	})
 	
 
 	console.log(Utils.isFacebookApp())
@@ -277,7 +283,7 @@ $(document).ready(function(){
 		}
 	})
 
-	if(w <= 1024){
+	if(w < 1024){
 		$('#back-bg').attr('src', bg_mobile)
 		$('#movie-2').attr('src', './static/mobile.mp4?v=1')
 		$('#movie-2').attr('poster', './static/mobile.jpg?v=1')
@@ -365,7 +371,7 @@ $(document).ready(function(){
 			$('#back-contain').css('opacity', 1)
 			$('#back-contain').css('visibility', 'visible')
 			$('#back-contain').css('background-color', '#000000')
-			if(window.innerWidth <= 1024){
+			if(window.innerWidth < 1024){
 				ctx.drawImage(pic3, 0, 0, 720, 1280, 0, 0, 375, 667)
 			}
 			else{
@@ -381,7 +387,7 @@ $(document).ready(function(){
 			$('#back-text').css('opacity', 1)
 			var temp = (cross2 - scroll_now) / window.innerHeight.toFixed(2)
 			$('#back-text').text('今年7月中改善後的貨櫃屋，四周鐵皮加裝了隔熱牆。')
-			if(window.innerWidth <= 1024){
+			if(window.innerWidth < 1024){
 				ctx.drawImage(pic4, 0, 0, 720, 1280, 0, 0, 375, 667)
 				ctx.drawImage(pic3, 0, 0, 720, 1280*temp, 0, 0, 375, 667*temp)
 			}
