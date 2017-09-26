@@ -27,7 +27,7 @@ export default {
                 "hitType": "event",
                 "eventCategory": "Line Share",
                 "eventAction": "click",
-                "eventLabel": "[" + Utils.detectPlatfrom() + "] [" + document.querySelector('title').innerHTML + "] [line share]"
+                "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [line share]"
             });
             if(Utils.detectMob()){
                 //手機
