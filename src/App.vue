@@ -12,14 +12,14 @@
 		<div class="video-contain">
 			<video id="movie-2" playsinline data-target="2"></video>
 			<div class="video-control">
-				<div class="progress hidden-md hidden-lg">
+				<div class="progress hidden-lg">
 					<div id="progress-bar-2" class="progress-bar progress-bar-striped"></div>
 				</div>
-				<div class="img-say-out volume-text hidden-md hidden-lg" data-target="2">點按開聲音</div>
+				<div class="img-say-out volume-text hidden-lg" data-target="2">點按開聲音</div>
 				<i class="fa fa-spinner fa-pulse video-wait" data-target="2"></i>
-				<i class="fa fa-play video-play hidden-md hidden-lg" data-target="2"></i>
-				<i class="fa fa-volume-off volume hidden-md hidden-lg" data-target="2"></i>
-				<i class="fa fa-repeat replay hidden-md hidden-lg" data-target="2"></i>
+				<i class="fa fa-play video-play hidden-lg" data-target="2"></i>
+				<i class="fa fa-volume-off volume hidden-lg" data-target="2"></i>
+				<i class="fa fa-repeat replay hidden-lg" data-target="2"></i>
 			</div>
 		</div>
 		<ContentContainer background-color="#ECEAEA">
@@ -47,7 +47,7 @@
 			<Quote text="但小女孩不會洗澡，也不會洗衣服，因為貨櫃屋沒有浴室，也沒有晾衣服的地方，渾身異味導致其他孩子排斥她。" color="#FF4612" borderColor="#B5B5B5"/>
 			<p><br/></p>
 			<p><br/></p>
-			<p>小女孩的班導師說，學校把校內的淋浴間整理出來給小女孩洗澡跟晾衣服，同學看他的眼光變友善，才能讓她融入群體。</p>
+			<p>小女孩的班導師說，學校把校內的淋浴間整理出來給小女孩洗澡跟晾衣服，同學看她的眼光變友善，才能讓她融入群體。</p>
 			<p><br/></p>
 			<p>不只是洗澡問題，每天接她上課時，還會教導小女孩整理家裡。「家庭幾乎失去功能的情況下，學校老師能做的就是補強親職功能，」課後輔導老師說，小女孩長期只跟爸爸互動，到學校也需要「暖機」半小時以上才敢開口說話，而往往經過一個週末，周一到校又是一臉漠然，得重新開始輔導。</p>
 			<p><br/></p>

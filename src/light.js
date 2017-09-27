@@ -33,6 +33,12 @@ $(document).ready(function(){
 	var scroll_now
 	var fixbg1, fixbg2, fixbg3
 
+	$(window).resize(function(){
+		if(w >= 768 && w <= 1024){
+			if($(window).width()!=w)	window.location.href="./index.html";
+		}
+	});
+
 	$('a').click(function(){
         console.log('click')
         fbq('track', 'ViewContent');
@@ -111,8 +117,6 @@ $(document).ready(function(){
 		fixbg1 = $('#fixbg-1').offset().top
 		fixbg2 = $('#fixbg-2').offset().top
 		fixbg3 = $('#fixbg-3').offset().top
-		$('.blank').css('height', h+'px')
-		$('#cover').css('height', h+'px')
 
 		if(scroll_now < fixbg1 - h){
 			$('.hbutton').css('background-color', '')

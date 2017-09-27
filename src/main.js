@@ -332,7 +332,6 @@ $(document).ready(function(){
 		cross2 = $('#cross-2').offset().top
 		movie = $('#movie-2').offset().top;
 		movie1 = $('#movie-1').offset().top;
-		$('#cover').css('height', h+'px')
 		if(scroll_now >= movie - h/2 && scroll_now < movie + h/2){
 			$('.video-contain').css('filter', 'brightness(1)')
 			if(navigator.userAgent.match(/iPhone/i)){
