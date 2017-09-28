@@ -330,8 +330,7 @@ $(document).ready(function(){
 		chart = $('#chart-contain').offset().top
 		cross1 = $('#cross-1').offset().top
 		cross2 = $('#cross-2').offset().top
-		movie = $('#movie-2').offset().top;
-		movie1 = $('#movie-1').offset().top;
+		movie = $('#movie-2').offset().top;		
 		if(scroll_now >= movie - h/2 && scroll_now < movie + h/2){
 			$('.video-contain').css('filter', 'brightness(1)')
 			if(navigator.userAgent.match(/iPhone/i)){
@@ -346,20 +345,6 @@ $(document).ready(function(){
 		else{
 			$('.video-contain').css('filter', 'brightness(0.5)')
 			moviePause(2)
-		}
-
-		if(scroll_now >= movie1 - (h + 200) && scroll_now < movie1){
-			if(navigator.userAgent.match(/iPhone/i)){
-				if(ver == true){
-					$('#movie-1').get(0).play()
-				}
-			}
-			else{
-				$('#movie-1').get(0).play()
-			}
-		}
-		else{
-			$('#movie-1').get(0).pause()
 		}
 
 		if(scroll_now >= cross1 - (h + 200) && scroll_now < cross2 - h){

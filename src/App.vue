@@ -12,14 +12,14 @@
 		<div class="video-contain">
 			<video id="movie-2" playsinline data-target="2"></video>
 			<div class="video-control">
-				<div class="progress hidden-lg">
+				<div class="progress hidden-md hidden-lg">
 					<div id="progress-bar-2" class="progress-bar progress-bar-striped"></div>
 				</div>
-				<div class="img-say-out volume-text hidden-lg" data-target="2">點按開聲音</div>
+				<div class="img-say-out volume-text hidden-md hidden-lg" data-target="2">點按開聲音</div>
 				<i class="fa fa-spinner fa-pulse video-wait" data-target="2"></i>
-				<i class="fa fa-play video-play hidden-lg" data-target="2"></i>
-				<i class="fa fa-volume-off volume hidden-lg" data-target="2"></i>
-				<i class="fa fa-repeat replay hidden-lg" data-target="2"></i>
+				<i class="fa fa-play video-play" data-target="2"></i>
+				<i class="fa fa-volume-off volume hidden-md hidden-lg" data-target="2"></i>
+				<i class="fa fa-repeat replay hidden-md hidden-lg" data-target="2"></i>
 			</div>
 		</div>
 		<ContentContainer background-color="#ECEAEA">
@@ -37,7 +37,7 @@
 		</ContentContainer>
 		<FixedBackground id="fixbg-1" text="住在貨櫃屋裡的女孩" :src="pic1_mobile" :src-web="pic1_web"/>
 		<ContentContainer background-color="#ECEAEA">
-			<p>路過大橋的鄉民，好心幫爸爸介紹工作，讓他有收入，勉強可以租個房子安頓女兒，但卻因為衛生習慣不佳，把房子弄得太髒亂遭房東趕出去。雇主把用來當倉庫的貨櫃屋清出來，讓父女有個遮風避雨的地方。</p>
+			<p>路過大橋的鄉民，好心幫爸爸介紹工作，讓他有收入，勉強可以租個房子安頓女兒，但因種種因素又遭房東趕出去。雇主把用來當倉庫的貨櫃屋清出來，讓父女有個遮風避雨的地方。</p>
 			<p><br/></p>
 			<p>「她爸爸來我這邊打工，我們每天六點就出門了，結果小孩常常沒上學，有時候6天沒上學、10天沒上學，情況很嚴重，老師找不到她爸爸，就打電話給我找小孩、校長也打給我、社會局也打給我，最後連少年組也打給我了！」雇主說，閒置的貨櫃屋剛好在學校附近，也方便學校老師早上來帶孩子去上課。</p>
 			<p><br/></p>
@@ -59,8 +59,6 @@
 			<p>課輔老師尋求合作補救教學課程的永齡基金會幫忙，提供房屋修繕費，永齡也找來幫忙修繕的志工隊，把貨櫃屋的環境改善，包括加裝隔熱、裝設衛浴設備，志工隊熱情迅速，很快地讓父女有可以安心洗熱水澡、洗衣服的地方。</p>
 			<p><br/></p>
 			<p>「我的補救教學班上有3個孩子，她與另外2個孩子的情感連結很強，<b>她說：『我們都沒有媽媽』，他們覺得是同一國的。」</b>課輔老師自己也有3個孩子，她把這個怕生、很難融入群體也有創傷的小女孩當成自己的孩子一樣教養。</p>
-			<p><br/></p>
-			<video id="movie-1" poster="./static/movie1.jpg" :src="video" loop playsinline muted/>
 			<p><br/></p>
 			<p>小女孩的爸爸就像玩伴，能陪伴她卻沒辦法教導孩子，但課輔老師體恤地說，她爸爸也很少跟人群接觸，有一次教導小女孩洗衣服時，爸爸看了急忙的謝謝老師與學校，回到家，洗乾淨的衣服也收拾好，<b>「你伸出個援手就是個溫度，這個溫度能不能一點點的改變。不是用語言的方式，而是用行動的方式。」</b></p>
 		</ContentContainer>
@@ -111,7 +109,7 @@
 			<p><br/></p>
 			<p>還有更多像他們一樣落在安全網外的孩子，<b>「你們住在台北可能不相信，這裡很多8、9歲的孩子為了吃一頓飯，每天要到同學家裡幫忙打掃、洗碗，賺零用錢。」</b>兒少站的課輔老師陳美如說，這些孩子都有家人，但是沒有人可以溫飽，每天上學的營養午餐是唯一正常的飯食。</p>
 			<p><br/></p>
-			<p>「隱藏性的高關懷兒童很多，」永齡希望小學成大分校社工督導黃慧菁說，不少農業縣市偏鄉資源相對少，弱勢兒童特徵很明顯，他們可能不太洗頭洗澡、穿著衣服破舊，家訪時也可以一眼分辨傢俱都是二手、撿來的物品。</p>
+			<p>「隱藏性的高關懷兒童很多，」永齡希望小學成大分校社工督導黃慧菁說，不少農業縣市偏鄉資源相對少，弱勢兒童特徵很明顯，從家裡及周遭環境就能辨識。</p>
 			<p><br/></p>
 			<ImageContain width="720" height="580" :src="pic10_mobile" width-web="880" height-web="580" :src-web="pic10_web" imgsay="有研究顯示，約半數的貧窮家戶會持續4年貧困，四分之一的家戶甚至超過8年以上都處於貧困狀態，無法脫貧。"/>
 			<p><br/></p>
@@ -208,8 +206,6 @@ import Logo from './components/Logo'
 import FBComment from './components/FBComment'
 import Relate from './components/Relate'
 import Foot from './components/Footer'
-
-import video from './assets/video_1.mp4'
 
 import pic1_web from './assets/pic1.jpg'
 import pic2_web from './assets/pic2.jpg'

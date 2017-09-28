@@ -44,7 +44,7 @@ export default {
         },
         handleScroll: function(e){
             let currentH = window.pageYOffset
-            if(currentH > (this.$el.offsetTop - window.innerHeight - 100) && currentH < (this.$el.offsetTop + window.innerHeight)){
+            if(currentH > (this.$el.offsetTop - window.innerHeight - 200) && currentH < (this.$el.offsetTop + window.innerHeight)){
                 this.opacity = 1
             }
             else{
