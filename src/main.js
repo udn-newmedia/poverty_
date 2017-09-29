@@ -111,9 +111,8 @@ $(document).ready(function(){
 	var pic3, pic4
 	var movie, movie1
 	var counter
-	var video = document.getElementById("video");
 	var canvas, canvas2, canvas3
-	var ctx, volume, video_state
+	var ctx, volume
 	var ver = Utils.iOSVersion(10)
 
 

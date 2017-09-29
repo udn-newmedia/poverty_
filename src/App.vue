@@ -258,7 +258,6 @@ export default {
 			relate2: relate2,
 			relate3: relate3,
 			relate4: relate4,
-			video: video
 		}
 	},
 	components: {
