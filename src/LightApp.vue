@@ -43,7 +43,7 @@
 			<p><br/><p>
 			<p>人之幼協會在永齡基金會的支持下，提供弱勢出身的青年，服務家鄉的機會。走入社區推展親職活動，協助強化家庭功能。更重要的是，促進「社區培力」，活絡地方產業，讓在地年輕人能夠留在故鄉，為地方社區注入新生命。</p>
 			<p><br/></p>
-			<p>陳良進就是該協會招攬留在台南家鄉貢獻的範例。總是面帶笑容，跟長輩講得一口好台語的陳良進，可以理解偏鄉貧困孩子的處境，「我是住在鐵皮屋長大的小孩，學習過程中遇到大大小小的貴人，因此長大後想回饋，也能看到不同的世界，」他說，走入偏鄉會跟貧窮兒說，不用害怕出身環境不好，要比拚的是10年、20年後的成就，他自己就是活生生的示範。</p>
+			<p>陳良進就是該協會邀請合作留在台南家鄉貢獻的範例。總是面帶笑容，跟長輩講得一口好台語的陳良進，可以理解偏鄉貧困孩子的處境，「我是住在鐵皮屋長大的小孩，學習過程中遇到大大小小的貴人，因此長大後想回饋，也能看到不同的世界，」他說，走入偏鄉會跟貧窮兒說，不用害怕出身環境不好，要比拚的是10年、20年後的成就，他自己就是活生生的示範。</p>
 			<p><br/></p>
 			<div class="squre-board">
 				<div class="squre-card">
@@ -87,10 +87,12 @@
 			<p><br/></p>
 			<p><br/></p>
 			<p>「社會上有許多默默做事的人，但沒有得到回報，」黃雅玲認為，如今長大脫貧，能夠參與良善循環中的一部分，非常高興，自己從小雖然貧困，但一直接受到許多人的關愛，才能對自己的出身沒有自卑感，因此，現在更想回饋給需要的人。</p>
+			<p><br/></p>
+			<p>蔡淑芳說，這是儲蓄互助社的概念，庇護工場給與身障孩子工作的機會，而購買庇護工場的商品，收入中又再撥部分金額給貧窮的孩子當存款，等到貧窮兒長大後，這個「貧窮存摺」就是貧窮兒的靠山，要留學、創業的第一桶金，就變成他們脫貧的機會。</p>
 			<p class="hidden-xs hidden-sm"><br/></p>
 			<div class="squre-board hidden-xs hidden-sm">
 				<div class="squre-card" id="card-2">
-					<h2>貧窮解方</h2>
+					<h2>公益流-幸福合作模式</h2>
 					<img class="hidden-xs hidden-sm" :src="chart_web"/>
 				</div>
 			</div>
@@ -243,7 +245,7 @@ import relate2 from './assets/relate2.jpg'
 import relate3 from './assets/relate3.jpg'
 import relate4 from './assets/relate4.jpg'
 
-import chart_web from './assets/light/chart.svg'
+import chart_web from './assets/light/chart.jpg'
 import chart_mobile from './assets/light/mobile/chart3-3.png'
 
 import tree from './assets/light/tree.png'

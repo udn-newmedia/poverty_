@@ -360,7 +360,7 @@ $(document).ready(function(){
 			$('#back-text').text('貨櫃屋裡滿是撿來的二手家具。')
 			$('#back-text').css('opacity', 1)
 		}
-		else if(scroll_now >= cross2 - h && scroll_now < cross2 + h){
+		else if(scroll_now >= cross2 - h && scroll_now < cross2 + h - 200){
 			$('#back-contain').css('opacity', 1)
 			$('#back-contain').css('visibility', 'visible')
 			$('#back-contain').css('background-color', '#000000')
