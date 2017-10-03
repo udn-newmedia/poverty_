@@ -53,6 +53,7 @@ $(document).ready(function(){
 	if(w < 1024){
 		if(Utils.isFacebookApp()){
 			$('#title-contain').css('margin-bottom', '128px')
+			$('.sub-title').css('margin-bottom', '128px')
 		}
 		$('#back-bg').attr('src', bg_mobile)
 	}
