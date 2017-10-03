@@ -28,7 +28,7 @@
 			<p><br/></p>
 			<p>20年來，台灣邊緣弱勢兒童增加一倍。《聯合報》找到8歲住在貨櫃屋的女孩、找到住在破舊髒亂沒熱水澡可洗的10歲男孩，但我們不想一次性消費個案故事，也不是給予捐款就能幫孩子翻轉命運。我們想邀請讀者探究為何這麼多孩子落在社會安全網之外？理解社會制度出了何種問題，進一步督促政府補好安全網。</p>
 			<p><br/></p>
-			<Share />
+			<Share href="https://udn.com/upf/newmedia/2017_data/poverty/index.html" />
 		</ContentContainer>
 		<FixedBackground id="fixbg-1" text="住在貨櫃屋裡的女孩" :src="pic1_mobile" :src-web="pic1_web"/>
 		<ContentContainer background-color="#ECEAEA">
@@ -99,14 +99,14 @@
 			<p><br/></p>
 			<p><b>（編按：為保護個案隱私，個案都以化名、且隱匿相關地名與當事人姓名。）</b></p>
 		</ContentContainer>
-		<FixedBackground id="fixbg-3" text="台灣貧窮兒是下流老人的3倍" :src="pic9_mobile" :src-web="pic9_web"/>
+		<FixedBackground id="fixbg-3" text="台灣貧窮兒是貧窮老人的3倍" :src="pic9_mobile" :src-web="pic9_web"/>
 		<div id="chart-contain">
 			<p><br/></p>
 			<div id="chart"></div>
 			<div id="chart-say">資料來源：家扶基金會2015年弱勢兒少生活趨勢調查報告</div>
 		</div>
 		<ContentContainer background-color="#ECEAEA">
-			<p>2015年台灣的貧富差距又創史上第二高，最有錢的前5%家庭跟最窮的後5%家庭，收入相差100倍以上。根據衛福部資料，低收與中低收入老人占總人口數5.89%，未滿12歲的貧窮兒童卻占有18.34%，人數是貧窮老人的三倍，台灣沒有「下流老人」（指低所得層的貧窮老人)，貧窮困苦的年齡層集中在流沙中年，以及台灣的下一代、將近12萬個貧窮兒童。</p>
+			<p>2015年台灣的貧富差距又創史上第二高，最有錢的前5%家庭跟最窮的後5%家庭，收入相差100倍以上。根據衛福部資料，低收與中低收入老人占總人口數5.89%，未滿12歲的貧窮兒童卻占有18.34%，人數是貧窮老人的三倍，台灣貧窮老人相對較少，貧窮困苦的年齡層集中在流沙中年，以及台灣的下一代、將近12萬個貧窮兒童。</p>
 			<p><br/></p>
 			<p>這些數字冷冰冰，但走一趟偏鄉的貨櫃屋、走一趟小寶的家，貧窮的苦境躍於眼前，<b>他們每天生活在惡劣的環境中，但他們卻落在社會安全網外。</b>住貨櫃屋的女孩戶籍紊亂，父親也沒法申請政府低收、中低收補助，而小寶即使居住的環境惡劣破舊、沒熱水，但仍屬於擁有「不動產」一族，更無法申請政府補助。</p>
 			<p><br/></p>
@@ -155,7 +155,7 @@
 			<p class="orange">《聯合報》將於10月4、5日，連續兩天刊出貧窮兒童系列報導，深入剖析貧窮世襲、邊緣弱勢以及社會安全網問題，邀請一同來關心台灣的孩子。</p>
 			<p><br/></p>
 			<p><br/></p>
-			<Share />
+			<Share href="https://udn.com/upf/newmedia/2017_data/poverty/index.html"/>
 			<Logo />
 			<p><br/></p>
 			<Editor>
@@ -164,7 +164,6 @@
 				<div>攝影：林伯東、劉學聖、侯永全</div>
 				<div>網頁製作：鄭偉廷</div>
 				<div>監製：董谷音、蔡幸怡</div>
-				<div>倡議夥伴：永齡慈善教育基金會</div>
 				<div>2017.10.03</div>
 			</Editor>
 			<p><br/></p>
@@ -187,7 +186,7 @@
 				</a>
 			</Relate>
 			<p><br/></p>
-			<FBComment />
+			<FBComment href="https://udn.com/upf/newmedia/2017_data/poverty/index.html" />
 		</ContentContainer>
 		<Foot background-color="#ECEAEA"/>
 		<div id="back-contain">

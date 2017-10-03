@@ -281,8 +281,8 @@ $(document).ready(function(){
 
 	if(w < 1024){
 		$('#back-bg').attr('src', bg_mobile)
-		$('#movie-2').attr('src', './static/mobile.mp4?v=2')
-		$('#movie-2').attr('poster', './static/mobile.jpg?v=2')
+		$('#movie-2').attr('src', './static/mobile.mp4?v=3')
+		$('#movie-2').attr('poster', './static/mobile.jpg?v=3')
 		$('#movie-2').prop('muted', true)
 		if(Utils.isFacebookApp()){
 			$('#title-contain').css('margin-bottom', '128px')
@@ -301,8 +301,8 @@ $(document).ready(function(){
 		pic4.src= pic4_mobile
 	}
 	else{
-		$('#movie-2').attr('src', './static/web.mp4?v=2')
-		$('#movie-2').attr('poster', './static/web.jpg?v=2')
+		$('#movie-2').attr('src', './static/web.mp4?v=3')
+		$('#movie-2').attr('poster', './static/web.jpg?v=3')
 		$('#movie-2').prop('controls', true)
 		$('#back-bg').attr('src', bg)
 		animation = bodymovin.loadAnimation({

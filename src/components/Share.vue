@@ -1,7 +1,7 @@
 <template>
     <div id="share-block" class="share-block">
         <div class="fb-like-block">
-    		<div class="fb-like" :data-href="link" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+    		<div class="fb-like" :data-href="href" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 		</div>
 		<div class="line-block" @click="lineShare">
 		    <img class="line-share" src="//media.line.me/img/button/zh-hant/84x20.png" width="92" height="22" alt="LINE分享給朋友">
@@ -16,11 +16,6 @@ import Utils from 'udn-newmedia-utils'
 export default {
     name: 'share',
     props: ['href'],
-    computed: {
-        link: function(){
-            return window.location.href
-        }
-    },
     methods: {
         lineShare: function(){
             ga("send", {

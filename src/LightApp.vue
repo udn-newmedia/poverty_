@@ -17,7 +17,7 @@
 			<p><br/></p>
 			<p>《聯合報》找到幾個孩子成長過程中遇到脫貧的方法，他們長大，身體力行去幫助命運相同、也落在社會安全網外的貧窮兒，努力回饋社會。</p>
 			<p><br/></p>
-			<Share />
+			<Share href="https://udn.com/upf/newmedia/2017_data/poverty/light.html" />
 		</ContentContainer>
 		<FixedBackground id="fixbg-1" text="流動攤販討生活的孩子" :src="pic1_mobile" :src-web="pic1_web"/>
 		<ContentContainer background-color="#ECEAEA">
@@ -164,7 +164,7 @@
 			</div>
 			<p><br/></p>
 			<p><br/></p>
-			<Share />
+			<Share href="https://udn.com/upf/newmedia/2017_data/poverty/light.html" />
 			<Logo />
 			<p><br/></p>
 			<Editor>
@@ -173,7 +173,6 @@
 				<div>攝影：林伯東、劉學聖、侯永全</div>
 				<div>網頁製作：鄭偉廷</div>
 				<div>監製：董谷音、蔡幸怡</div>
-				<div>倡議夥伴：永齡慈善教育基金會</div>
 				<div>2017.10.03</div>
 			</Editor>
 			<p><br/></p>
@@ -196,7 +195,7 @@
 				</a>
 			</Relate>
 			<p><br/></p>
-			<FBComment />
+			<FBComment href="https://udn.com/upf/newmedia/2017_data/poverty/light.html" />
 		</ContentContainer>
 		<Foot background-color="#ECEAEA"/>
 		<div id="back-contain">
